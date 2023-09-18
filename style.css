@@ -1,36 +1,84 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
-#slider {
-  /* положение слайдера */
-  position: relative;
-  text-align: center;
-  top: 10px;
+
+body {
+  font-family: Arial, sans-serif;
 }
 
 #slider {
+  position: relative;
+  text-align: center;
   margin: 0 auto;
 }
 
-#slides article {
-  /*все изображения справа друг от друга*/
-  width: 20%;
-  float: left;
-}
-
-#slides .img {
-  /*устанавливает общий размер блока с изображениями */
-  width: 50%;
-  line-height: 0;
-}
-
-#overflow {
-  /*скрывает все, что находится за пределами этого блока*/
-  width: 100%;
+.slides {
+  width: 80%;
   overflow: hidden;
+  margin: 0 auto;
 }
 
-article img {
+.slides .img {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.slides .img article {
+  flex: 0 0 100%;
+  position: relative;
+}
+
+img {
   width: 100%;
+  height: auto;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+#active {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#active label {
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  margin: 0 5px;
+  transition: background-color 0.2s ease;
+}
+
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3),
+#switch4:checked ~ #active label:nth-child(4) {
+  background: #18a3dd;
+}
+
+#switch1:checked ~ .slides .img {
+  transform: translateX(0%);
+}
+#switch2:checked ~ .slides .img {
+  transform: translateX(-100%);
+}
+#switch3:checked ~ .slides .img {
+  transform: translateX(-200%);
+}
+#switch4:checked ~ .slides .img {
+  transform: translateX(-300%);
 }
