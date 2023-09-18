@@ -22,12 +22,15 @@ body {
 
 .slides .img {
   display: flex;
+  flex-direction: column; /* Добавляем направление столбцом для подтекста */
+  align-items: center; /* Выравнивание по центру */
   transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .slides .img article {
   flex: 0 0 100%;
   position: relative;
+  margin-bottom: 20px; /* Добавляем отступ между изображением и подтекстом */
 }
 
 img {
@@ -45,6 +48,13 @@ img {
   padding: 10px;
   font-size: 18px;
   text-align: center;
+  transition: opacity 0.3s; /* Добавляем плавное появление подтекста */
+  opacity: 0; /* Начальное значение прозрачности */
+}
+
+/* Показываем подтекст при наведении на изображение */
+.slides .img article:hover .caption {
+  opacity: 1;
 }
 
 #active {
@@ -81,4 +91,15 @@ img {
 }
 #switch4:checked ~ .slides .img {
   transform: translateX(-300%);
+}
+
+.switch-slider {
+  display: none;
+}
+
+/* Добавляем медиа-запрос для изменения ширины слайдера на более узких экранах */
+@media screen and (max-width: 768px) {
+  .slides {
+    width: 100%;
+  }
 }
