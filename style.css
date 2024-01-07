@@ -41,9 +41,6 @@ img {
 }
 
 .caption {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   color: #000000;
   font-size: 18px;
   text-align: end;
