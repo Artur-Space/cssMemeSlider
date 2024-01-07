@@ -18,6 +18,7 @@ body {
   width: 80%;
   overflow: hidden;
   margin: 0 auto;
+  height: 530px;
 }
 
 .slides .img {
@@ -41,15 +42,10 @@ img {
 .caption {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 10px;
+  right: 0;
+  color: #000000;
   font-size: 18px;
-  text-align: center;
-  transition: opacity 0.3s; /* Добавляем плавное появление подтекста */
-  opacity: 0; /* Начальное значение прозрачности */
+  text-align: end;
 }
 
 /* Показываем подтекст при наведении на изображение */
