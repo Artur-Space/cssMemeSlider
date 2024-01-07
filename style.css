@@ -12,6 +12,7 @@ body {
   position: relative;
   text-align: center;
   margin: 0 auto;
+  top: 80px;
 }
 
 .slides {
