@@ -22,7 +22,7 @@ body {
 
 .slides .img {
   display: flex;
-  flex-direction: column; /* Добавляем направление столбцом для подтекста */
+  flex-direction: row; /* Добавляем направление столбцом для подтекста */
   align-items: center; /* Выравнивание по центру */
   transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
